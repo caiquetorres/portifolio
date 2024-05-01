@@ -2,8 +2,13 @@
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
+		fontFamily: {
+			sans: ['Montserrat'],
+			code: ['Inconsolata']
+		},
 		extend: {
 			maxWidth: {
+				blog: '760px',
 				content: '1170px'
 			},
 			colors: {

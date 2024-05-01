@@ -41,6 +41,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"highlight.js": "^11.9.0",
 		"typed.js": "^2.1.0"
 	}
 }
