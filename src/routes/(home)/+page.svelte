@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<meta name="theme-color" content="#2F4550" />
+	<meta name="theme-color" content="#111111" />
 </svelte:head>
 
 <main class="flex flex-col items-center overflow-y-auto overflow-x-hidden">

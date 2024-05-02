@@ -4,7 +4,8 @@ export default {
 	theme: {
 		fontFamily: {
 			sans: ['Montserrat'],
-			code: ['Inconsolata']
+			code: ['Inconsolata'],
+			cursive: ['Kalam']
 		},
 		extend: {
 			maxWidth: {
@@ -12,12 +13,11 @@ export default {
 				content: '1170px'
 			},
 			colors: {
-				cordovan: '#904E55',
 				charcoal: '#2F4550',
-				'paynes-gray': '#586F7C',
-				silver: '#CBBFBB',
-				'floral-white': '#FFF8F0',
-				seasalt: '#F9F9F9'
+				seasalt: '#F9F9F9',
+				night: '#111111',
+				cordovan: '#904E55',
+				silver: '#CACACA'
 			}
 		}
 	},

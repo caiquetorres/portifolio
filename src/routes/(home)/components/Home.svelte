@@ -3,14 +3,16 @@
 	import Typed from 'typed.js';
 	import Linkedin from '$lib/components/icons/Linkedin.svelte';
 	import GitHub from '$lib/components/icons/GitHub.svelte';
-	import Menphis2 from '$lib/components/menphis/Menphis2.svelte';
-	import Menphis1 from '$lib/components/menphis/Menphis1.svelte';
 	import Code from '$lib/components/Code.svelte';
+	import Leetcode from '$lib/components/icons/Leetcode.svelte';
+	import Menphis1 from '$lib/components/memphis/Memphis1.svelte';
+	import Memphis3 from '$lib/components/memphis/Memphis3.svelte';
 
 	onMount(() => {
 		new Typed('#engineer-name', {
-			strings: ['Hi', "Hi, I'm Caique"],
+			strings: ['Hi', "Hi, I'm an Engineer", "Hi, I'm Caique"],
 			typeSpeed: 50,
+			backSpeed: 35,
 			showCursor: false
 		});
 	});
@@ -21,32 +23,41 @@
 	class="home flex h-[55rem] max-h-screen w-full items-center justify-center bg-seasalt"
 >
 	<div class="relative flex h-full w-full max-w-content items-center justify-center">
-		<Menphis1
-			class="pointer-events-none absolute left-0 top-0 h-[15rem] w-[15rem] select-none opacity-[0.03] md:h-auto md:w-auto"
-		/>
-		<Menphis2
-			class="pointer-events-none absolute bottom-0 right-0 h-[15rem] w-[15rem] select-none opacity-[0.03] md:h-auto md:w-auto"
-		/>
-		<div class=" flex w-[40rem] flex-col items-center justify-center gap-4 px-6 md:p-0">
+		<div class="pointer-events-none absolute h-full w-full text-charcoal opacity-20">
+			<Memphis3 class="absolute left-0 top-0 h-[15rem] w-[15rem] md:h-[20rem] md:w-[20rem]" />
+			<Menphis1
+				class="absolute bottom-[-5.25rem] right-0 h-[15rem] w-[15rem] md:h-[20rem] md:w-[20rem]"
+			/>
+		</div>
+		<div class="flex w-[40rem] flex-col items-center justify-center gap-4 px-6 md:p-0">
 			<div class="flex">
 				<!-- svelte-ignore a11y_missing_content -->
 				<h1
 					id="engineer-name"
-					class="min-h-9 text-center text-3xl font-semibold text-charcoal md:h-12 md:text-5xl"
+					class="min-h-9 text-center text-3xl font-semibold text-night md:h-12 md:text-5xl"
 				></h1>
 			</div>
-			<p class="text-center text-sm text-charcoal md:text-base">
+			<p class="text-center text-sm text-night md:text-base">
 				Dedicated to <em class="font-semibold not-italic text-cordovan">TypeScript</em>,
 				<em class="font-semibold not-italic text-cordovan">Rust</em>, and other key technologies, I
-				continuously enhance my expertise to create exceptional user experiences in software
+				continuously enhance my expertise to create exceptional softwares
 			</p>
-			<ul class="mb-10 flex space-x-2">
-				<a href="https://github.com/caiquetorres" target="_blank">
-					<GitHub class="text-charcoal duration-200 hover:text-cordovan" />
-				</a>
-				<a href="https://www.linkedin.com/in/caiquetorres" target="_blank">
-					<Linkedin class="text-charcoal duration-200 hover:text-cordovan" />
-				</a>
+			<ul class="mb-10 flex space-x-3">
+				<li>
+					<a href="https://github.com/caiquetorres" target="_blank">
+						<GitHub class="text-night transition-colors duration-100 hover:text-cordovan" />
+					</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/caiquetorres" target="_blank">
+						<Linkedin class="text-night transition-colors duration-100 hover:text-cordovan" />
+					</a>
+				</li>
+				<li>
+					<a href="https://leetcode.com/u/caiquetorres/" target="_blank">
+						<Leetcode class="text-night transition-colors duration-100 hover:text-cordovan" />
+					</a>
+				</li>
 			</ul>
 			<Code
 				defaultCode="slideTo(section: &quot;About me&quot;)"
@@ -63,19 +74,3 @@
 		</div>
 	</div>
 </section>
-
-<style>
-	.home {
-		position: relative;
-	}
-
-	.home:after {
-		@apply bg-charcoal;
-		position: absolute;
-		content: '';
-		bottom: -1px;
-		width: 100%;
-		height: 3rem;
-		clip-path: polygon(0% 0%, 0% 0px, 100% 100%, 0px 100%);
-	}
-</style>
