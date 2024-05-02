@@ -61,7 +61,7 @@
 			</ul>
 			<Code
 				defaultCode="slideTo(section: &quot;About me&quot;)"
-				on:click={() => {
+				onclick={() => {
 					const el = document.getElementById('about');
 					if (el) {
 						window.scrollTo({

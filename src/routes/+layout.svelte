@@ -1,26 +1,35 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	import '../app.css';
 	import GitHub from '$lib/components/icons/GitHub.svelte';
 	import Linkedin from '$lib/components/icons/Linkedin.svelte';
 	import Leetcode from '$lib/components/icons/Leetcode.svelte';
 
-	let darkBg = false;
+	import '../app.css';
 
-	const links = [
+	interface ILink {
+		href: string;
+		name: string;
+	}
+
+	let { children } = $props();
+
+	let darkBg = $state(false);
+	const links = $state.frozen<ILink[]>([
 		{ href: '/', name: 'Home' },
 		{ href: '#about', name: 'About' }
-		// { href: '#project', name: 'Projects' },
-		// { href: '#experience', name: 'Experience' }
-	];
+	]);
 
 	onMount(() => {
 		darkBg = window.scrollY > 100;
 	});
+
+	function handleWindowScroll(): void {
+		darkBg = window.scrollY > 100;
+	}
 </script>
 
-<svelte:window on:scroll={() => (darkBg = window.scrollY > 100)} />
+<svelte:window on:scroll={handleWindowScroll} />
 
 <header
 	class:header-night={darkBg}
@@ -45,7 +54,7 @@
 	</div>
 </header>
 
-<slot />
+{@render children()}
 
 <footer class="flex flex-col items-center justify-center bg-seasalt py-20 md:py-24">
 	<ul class="flex space-x-3">

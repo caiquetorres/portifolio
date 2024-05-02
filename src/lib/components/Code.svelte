@@ -3,29 +3,36 @@
 
 	import Play from './icons/Play.svelte';
 
-	import 'highlight.js/styles/hybrid.css';
+	interface Props {
+		defaultCode: string;
+		class?: string;
+		onclick?: () => void;
+	}
 
-	export let defaultCode: string;
+	let { ...props }: Props = $props();
 
 	let contentEl: HTMLElement;
-	$: c = ($$restProps.class || '') + ' ';
+	let cls = $derived(props['class'] || '');
 
-	onMount(() => {
-		contentEl.textContent = defaultCode;
-	});
+	onMount(() => reset());
+
+	function reset() {
+		contentEl.textContent = props.defaultCode;
+	}
 </script>
 
-<div class={c + 'w-full max-w-[30rem] overflow-hidden rounded-lg bg-[#313131]'}>
+<div class={cls + ' w-full max-w-[30rem] overflow-hidden rounded-lg bg-[#313131]'}>
 	<div class="flex items-center justify-between gap-4 px-4 py-2">
 		<span class="select-none justify-self-start text-xs text-silver">script</span>
-		<button on:click class="flex rounded bg-[#006DB1] p-2 text-xs text-seasalt hover:bg-[#02598F]">
+		<button
+			onclick={props.onclick}
+			class="flex rounded bg-[#006DB1] p-2 text-xs text-seasalt hover:bg-[#02598F]"
+		>
 			<Play class="mr-2 text-seasalt" />
 			<span class="select-none">Run code</span>
 		</button>
 		<button
-			on:click={() => {
-				contentEl.innerHTML = defaultCode;
-			}}
+			onclick={reset}
 			class="pointer-events-none select-none rounded bg-[#006DB1] p-2 text-xs text-seasalt opacity-50 hover:bg-[#02598F]"
 		>
 			Reset

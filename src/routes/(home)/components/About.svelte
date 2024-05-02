@@ -39,7 +39,7 @@
 		</div>
 		<div class="mt-8 flex w-full flex-col items-center justify-center gap-6">
 			<Code
-				class="z-10 w-full max-w-none md:w-[30rem]"
+				class="w-full max-w-none md:w-[30rem]"
 				defaultCode="downloadResume(format: ”pdf”, lang: ”en-US”)"
 			/>
 		</div>
