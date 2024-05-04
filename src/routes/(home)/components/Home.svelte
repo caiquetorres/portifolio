@@ -7,6 +7,7 @@
 	import Leetcode from '$lib/components/icons/Leetcode.svelte';
 	import Menphis1 from '$lib/components/memphis/Memphis1.svelte';
 	import Memphis3 from '$lib/components/memphis/Memphis3.svelte';
+	import { fade } from '$lib/animations/fade';
 
 	onMount(() => {
 		new Typed('#engineer-name', {
@@ -22,7 +23,7 @@
 	id="home"
 	class="home flex h-[55rem] max-h-screen w-full items-center justify-center bg-seasalt"
 >
-	<div class="relative flex h-full w-full max-w-content items-center justify-center">
+	<div use:fade class="relative flex h-full w-full max-w-content items-center justify-center">
 		<div class="pointer-events-none absolute h-full w-full text-charcoal opacity-20">
 			<Memphis3 class="absolute left-0 top-0 h-[15rem] w-[15rem] md:h-[20rem] md:w-[20rem]" />
 			<Menphis1
@@ -60,7 +61,7 @@
 				</li>
 			</ul>
 			<Code
-				defaultCode="slideTo(section: &quot;About me&quot;)"
+				defaultCode="slideTo(section: &quot;About&quot;)"
 				onclick={() => {
 					const el = document.getElementById('about');
 					if (el) {

@@ -7,8 +7,18 @@
 		theme?: 'dark' | 'light';
 	}
 
+	interface ILink {
+		href: string;
+		name: string;
+	}
+
 	const { theme = 'light' }: IProps = $props();
 	const isDark = $derived(theme === 'dark');
+	const links: ILink[] = [
+		{ href: '/', name: 'Home' },
+		{ href: '/#about', name: 'About' },
+		{ href: 'experience', name: 'Experience' }
+	];
 </script>
 
 <footer
@@ -36,16 +46,15 @@
 	<ul
 		class:text-night={!isDark}
 		class:text-silver={isDark}
-		class="tems-center mt-4 flex space-x-2 md:space-x-4"
+		class="tems-center mt-4 flex flex-col gap-2 md:flex-row"
 	>
-		<li>
-			<a href="/" class="hover:text-md text-xs uppercase duration-100 md:text-sm">Home</a>
-		</li>
-		<li>
-			<a href="#about" class="hover:text-md text-xs uppercase duration-100 md:text-sm">About me</a>
-		</li>
+		{#each links as { href, name }}
+			<li class="flex justify-center">
+				<a {href} class="hover:text-md text-xs uppercase md:text-sm">{name}</a>
+			</li>
+		{/each}
 	</ul>
-	<span class:text-night={!isDark} class:text-silver={isDark} class="mt-6 font-cursive">
+	<span class:text-night={!isDark} class:text-silver={isDark} class="mt-6 text-center font-cursive">
 		Created from scratch with ❤️ by Caique Torres
 	</span>
 </footer>
