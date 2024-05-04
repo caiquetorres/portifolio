@@ -1,30 +1,17 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	import GitHub from '$lib/components/icons/GitHub.svelte';
-	import Linkedin from '$lib/components/icons/Linkedin.svelte';
-	import Leetcode from '$lib/components/icons/Leetcode.svelte';
-
-	import '../app.css';
-
-	interface ILink {
-		href: string;
-		name: string;
-	}
+	import '../app.scss';
 
 	let { children } = $props();
 
 	let darkBg = $state(false);
-	const links = $state.frozen<ILink[]>([
-		{ href: '/', name: 'Home' },
-		{ href: '#about', name: 'About' }
-	]);
 
 	onMount(() => {
 		darkBg = window.scrollY > 100;
 	});
 
-	function handleWindowScroll(): void {
+	function handleWindowScroll() {
 		darkBg = window.scrollY > 100;
 	}
 </script>
@@ -42,13 +29,14 @@
 		</a>
 		<nav>
 			<ul class="flex h-full items-center space-x-2 md:space-x-4">
-				{#each links as { href, name }}
-					<li>
-						<a {href} class="hover:text-md text-xs uppercase duration-100 md:text-sm">
-							{name}
-						</a>
-					</li>
-				{/each}
+				<li>
+					<a href="/" class="hover:text-md text-xs uppercase duration-100 md:text-sm">Home</a>
+				</li>
+				<li>
+					<a href="#about" class="hover:text-md text-xs uppercase duration-100 md:text-sm"
+						>About me</a
+					>
+				</li>
 			</ul>
 		</nav>
 	</div>
@@ -56,37 +44,7 @@
 
 {@render children()}
 
-<footer class="flex flex-col items-center justify-center bg-seasalt py-20 md:py-24">
-	<ul class="flex space-x-3">
-		<li>
-			<a href="https://github.com/caiquetorres" target="_blank">
-				<GitHub class="text-night transition-colors duration-100 hover:text-cordovan" />
-			</a>
-		</li>
-		<li>
-			<a href="https://www.linkedin.com/in/caiquetorres" target="_blank">
-				<Linkedin class="text-night transition-colors duration-100 hover:text-cordovan" />
-			</a>
-		</li>
-		<li>
-			<a href="https://leetcode.com/u/caiquetorres/" target="_blank">
-				<Leetcode class="text-night transition-colors duration-100 hover:text-cordovan" />
-			</a>
-		</li>
-	</ul>
-	<ul class="tems-center mt-4 flex space-x-2 md:space-x-4">
-		{#each links as { href, name }}
-			<li>
-				<a {href} class="hover:text-md text-xs uppercase duration-100 md:text-sm">
-					{name}
-				</a>
-			</li>
-		{/each}
-	</ul>
-	<span class="mt-6 font-cursive">Created from scratch with ❤️ by Caique Torres </span>
-</footer>
-
-<style>
+<style lang="scss">
 	.header-seasalt {
 		@apply border-none bg-transparent text-night;
 	}

@@ -1,6 +1,14 @@
 <script lang="ts">
 	import Code from '$lib/components/Code.svelte';
 	import Memphis2 from '$lib/components/memphis/Memphis2.svelte';
+
+	async function downloadResume(): Promise<void> {
+		const a = document.createElement('a');
+		a.href = '/api/files/resumes/resume_en_us.pdf';
+		a.download = 'Resume_en_US.pdf';
+		a.click();
+		a.remove();
+	}
 </script>
 
 <section
@@ -17,6 +25,7 @@
 		</div>
 		<div class="flex flex-col items-center gap-4">
 			<h2 class="text-2xl font-semibold uppercase text-seasalt md:text-3xl">About me</h2>
+
 			<div class="h-1 w-[5rem] rounded-full bg-cordovan"></div>
 		</div>
 		<div class="text relative mt-8 flex w-full max-w-blog flex-col items-center justify-center">
@@ -39,6 +48,7 @@
 		</div>
 		<div class="mt-8 flex w-full flex-col items-center justify-center gap-6">
 			<Code
+				onclick={downloadResume}
 				class="w-full max-w-none md:w-[30rem]"
 				defaultCode="downloadResume(format: ”pdf”, lang: ”en-US”)"
 			/>
@@ -46,7 +56,7 @@
 	</div>
 </section>
 
-<style>
+<style lang="scss">
 	section {
 		clip-path: polygon(0% 0%, 100% 2rem, 100% calc(100% - 2rem), 0% 100%);
 	}
