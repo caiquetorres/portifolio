@@ -3,8 +3,6 @@
 	import Header from '$lib/components/Header.svelte';
 	import About from './components/About.svelte';
 	import Home from './components/Home.svelte';
-
-	// TODO: Move the components content to this page.
 </script>
 
 <svelte:head>

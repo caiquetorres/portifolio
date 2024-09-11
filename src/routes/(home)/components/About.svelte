@@ -40,8 +40,8 @@
 				on my GitHub. There, you can find projects in
 				<strong class="font-semibold text-seasalt">TypeScript</strong>,
 				<strong class="font-semibold text-seasalt">JavaScript</strong>,
-				<strong class="font-semibold text-seasalt">Svelte</strong>,
-				<strong class="font-semibold text-seasalt">C#</strong>, and
+				<strong class="font-semibold text-seasalt">C#</strong>,
+				<strong class="font-semibold text-seasalt">Go</strong> and
 				<strong class="font-semibold text-seasalt">Rust</strong>.
 			</p>
 		</div>

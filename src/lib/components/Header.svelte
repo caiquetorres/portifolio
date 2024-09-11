@@ -5,42 +5,34 @@
 		href: string;
 		name: string;
 	}
-
 	let shouldShow = $state(false);
 	let bodyOverflow = $derived(shouldShow ? 'hidden' : 'auto');
 	let isDark = $state(false);
-
 	const links: ILink[] = [
 		{ href: '/', name: 'Home' },
 		{ href: '/#about', name: 'About' },
 		{ href: 'experience', name: 'Experience' }
 	];
-
 	onMount(() => {
 		isDark = window.scrollY > 0;
-
 		const media = window.matchMedia('(min-width: 640px)');
 		const listener = () => {
 			if (shouldShow && window.innerWidth >= 640) {
 				shouldShow = false;
 			}
 		};
-
 		media.addEventListener('change', listener);
 		return () => media.removeEventListener('change', listener);
 	});
-
 	$effect(() => {
 		document.body.style.overflow = bodyOverflow;
 	});
-
 	/**
 	 * Shows or closes the menu modal.
 	 */
 	function toggleShouldShow() {
 		shouldShow = !shouldShow;
 	}
-
 	/**
 	 * Says whether the header should have its background dark.
 	 */
@@ -92,6 +84,7 @@
 	}
 
 	.header-night {
+		background: url(grain.png);
 		@apply border-b-silver bg-night text-seasalt;
 	}
 </style>

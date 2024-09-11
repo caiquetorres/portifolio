@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-
 	import Play from './icons/Play.svelte';
 
 	interface Props {
@@ -10,12 +9,9 @@
 	}
 
 	let { ...props }: Props = $props();
-
 	let contentEl: HTMLElement;
 	let cls = $derived(props['class'] || '');
-
 	onMount(() => reset());
-
 	function reset() {
 		contentEl.textContent = props.defaultCode;
 	}

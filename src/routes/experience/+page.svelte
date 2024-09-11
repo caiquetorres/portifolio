@@ -9,6 +9,8 @@
 
 	import micro1 from '$lib/assets/micro1_logo.png';
 	import liga from '$lib/assets/LIGA_logo.png';
+	import rdStation from '$lib/assets/rd_station_logo.png';
+	// import amparo from '$lib/assets/amparo_logo.png';
 
 	interface IExperience {
 		company: CompanyEntity;
@@ -16,21 +18,51 @@
 	}
 
 	const data: IExperience[] = [
+		// {
+		// 	company: new CompanyEntity(amparo, 'Amparo', 'https://www.amparo.com.vc/'),
+		// 	jobs: [
+		// 		new JobEntity(
+		// 			'Software Engineer',
+		// 			'I developed and maintained backend applications, working with microservices architectures using Go, hosted on AWS with integration of services like Lambda, SQS, and SES. My role involved collaborating with the team to enhance practices, architectures, and solutions, conducting tests, debugging code, and optimizing performance.',
+		// 			{
+		// 				start: new Date('2024-09-01 13:00:00'),
+		// 				end: null
+		// 			}
+		// 		)
+		// 	]
+		// },
 		{
-			company: new CompanyEntity(micro1, 'micro1'),
+			company: new CompanyEntity(rdStation, 'RD Station', 'https://www.rdstation.com/'),
+			jobs: [
+				new JobEntity(
+					'Software Engineer',
+					'I developed and maintained backend applications, working with microservices architectures using TypeScript (express) and Go. Additionally, I developed and maintained web platforms built with Vue. My role involved collaborating with the team to enhance practices, architectures, and solutions, conducting tests, debugging code, and optimizing performance. I managed code versioning using Git, with platforms such as GitLab and GitHub.',
+					{
+						start: new Date('2024-07-01 13:00:00'),
+						end: new Date('2024-09-01 13:00:00')
+					}
+				)
+			]
+		},
+		{
+			company: new CompanyEntity(micro1, 'micro1', 'https://www.micro1.ai/'),
 			jobs: [
 				new JobEntity(
 					'Software Engineer',
 					'I focused on prompt engineering to optimize language model training and input/output engineering to enhance the training process. My work involved utilizing Python and C++, applying data structures and algorithms (DSA) to refine the models. Additionally, I conducted thorough code reviews to ensure the highest quality in my developments.',
 					{
 						start: new Date('2024-03-01 13:00:00'),
-						end: null
+						end: new Date('2024-05-01 13:00:00')
 					}
 				)
 			]
 		},
 		{
-			company: new CompanyEntity(liga, 'LIGA - Innovation Lab for Games and Apps'),
+			company: new CompanyEntity(
+				liga,
+				'LIGA - Innovation Lab for Games and Apps',
+				'https://liga.facens.br/'
+			),
 			jobs: [
 				new JobEntity(
 					'Mid-Level Software Developer',
@@ -67,7 +99,6 @@
 			]
 		}
 	];
-
 	const sections: HTMLElement[] = new Array(data.length);
 </script>
 

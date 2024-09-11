@@ -40,7 +40,7 @@
 			</div>
 			<p class="text-center text-sm text-night md:text-base">
 				Dedicated to <em class="font-semibold not-italic text-cordovan">TypeScript</em>,
-				<em class="font-semibold not-italic text-cordovan">Rust</em>, and other key technologies, I
+				<em class="font-semibold not-italic text-cordovan">Go</em>, and other key technologies, I
 				continuously enhance my expertise to create exceptional softwares
 			</p>
 			<ul class="mb-10 flex space-x-3">

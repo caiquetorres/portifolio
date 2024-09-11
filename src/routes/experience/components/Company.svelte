@@ -16,13 +16,23 @@
 	class:light={theme === 'light'}
 	class="flex w-full max-w-blog flex-col items-center gap-2"
 >
-	<figure class="flex h-12 w-12 items-center justify-center">
-		<img class="h-full w-full object-cover" alt="{company.name} logo" src={company.logo} />
+	<figure class="pointer-events-none flex h-12 w-12 select-none items-center justify-center">
+		<img
+			class="h-full w-full rounded-md object-cover"
+			alt="{company.name} logo"
+			src={company.logo}
+		/>
 	</figure>
-	<h3 class="text-md text-center font-semibold">{company.name}</h3>
+	<h3 class="text-md text-center font-semibold">
+		<a href={company.url} target="_blank">{company.name}</a>
+	</h3>
 </div>
 
 <style lang="scss">
+	a {
+		text-decoration: underline;
+	}
+
 	.light {
 		& > h3 {
 			@apply text-night;

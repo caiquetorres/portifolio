@@ -6,12 +6,10 @@
 	interface IProps {
 		theme?: 'dark' | 'light';
 	}
-
 	interface ILink {
 		href: string;
 		name: string;
 	}
-
 	const { theme = 'light' }: IProps = $props();
 	const isDark = $derived(theme === 'dark');
 	const links: ILink[] = [

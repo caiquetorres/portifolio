@@ -8,7 +8,6 @@
 	}
 
 	const { theme = 'light', job }: IProps = $props();
-
 	let startDate = $derived(
 		`${job.range.start.toLocaleString('en-US', { month: 'short' })} ${job.range.start.getFullYear()}`
 	);
