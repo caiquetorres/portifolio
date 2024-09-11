@@ -1,9 +1,9 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', '$_AR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:latest', '.']
+    args: ['build', '-t', '$_AR_HOSTNAME/$PROJECT_ID/portifolio/$_SERVICE_NAME:latest', '.']
 
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', '$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/$_SERVICE_NAME:latest']
+    args: ['push', '$_AR_HOSTNAME/$PROJECT_ID/portifolio/$_SERVICE_NAME:latest']
 
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
@@ -11,11 +11,14 @@ steps:
       [
         'run',
         'deploy',
-        '$_SERVICE_NAME',
+        'portifolio-web',
         '--image',
-        '$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/$_SERVICE_NAME:latest',
+        '$_AR_HOSTNAME/$PROJECT_ID/portifolio/$_SERVICE_NAME:latest',
         '--region',
         '$_DEPLOY_REGION'
       ]
 images:
-  - '$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/$_SERVICE_NAME:latest'
+  - '$_AR_HOSTNAME/$PROJECT_ID/portifolio/$_SERVICE_NAME:latest'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
