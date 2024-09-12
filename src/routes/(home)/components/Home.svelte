@@ -38,7 +38,7 @@
 					class="min-h-9 text-center text-3xl font-semibold text-night md:h-12 md:text-5xl"
 				></h1>
 			</div>
-			<p class="text-center text-sm text-night md:text-base">
+			<p class="text-center text-sm text-night md:text-base md:leading-8">
 				Dedicated to <em class="font-semibold not-italic text-cordovan">TypeScript</em>,
 				<em class="font-semibold not-italic text-cordovan">Go</em>, and other key technologies, I
 				continuously enhance my expertise to create exceptional softwares

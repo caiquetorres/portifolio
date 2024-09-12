@@ -15,7 +15,7 @@ export default {
 			colors: {
 				charcoal: '#2F4550',
 				seasalt: '#F9F9F9',
-				night: '#111111',
+				night: '#151922',
 				cordovan: '#904E55',
 				silver: '#CACACA'
 			}

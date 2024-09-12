@@ -28,14 +28,16 @@
 			<div class="h-1 w-[5rem] rounded-full bg-cordovan"></div>
 		</div>
 		<div class="text relative mt-8 flex w-full max-w-blog flex-col items-center justify-center">
-			<p class="w-full text-justify font-sans text-sm leading-8 text-silver">
+			<p class="tracking w-full text-justify font-sans text-sm leading-7 text-silver md:leading-8">
 				As a <strong class="font-semibold text-seasalt">Computer Engineer</strong> and programmer, I
 				have a constant pursuit of improving my knowledge in all stages of software development, encompassing
 				different types, such as applications and games. My main goal is to create exceptional experiences
 				while simultaneously expanding my studies and professional growth within the company I am a part
 				of.
 			</p>
-			<p class="mt-8 w-full text-justify font-sans text-sm font-medium leading-8 text-silver">
+			<p
+				class="mt-8 w-full text-justify font-sans text-sm font-medium leading-7 text-silver md:leading-8"
+			>
 				I always maintain a continuous commitment to learning and share my findings and developments
 				on my GitHub. There, you can find projects in
 				<strong class="font-semibold text-seasalt">TypeScript</strong>,
@@ -51,7 +53,6 @@
 				class="w-full max-w-none md:w-[30rem]"
 				defaultCode="downloadResume(format: ”pdf”, lang: ”en-US”)"
 			/>
-			<h4 class="text-md mt-16 text-silver">Wanna know more of me?</h4>
 			<Code
 				class="z-10 w-full max-w-none md:w-[30rem]"
 				defaultCode="goTo(page: &quot;Experience&quot;)"

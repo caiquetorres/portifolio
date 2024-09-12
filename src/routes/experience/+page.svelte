@@ -10,7 +10,7 @@
 	import micro1 from '$lib/assets/micro1_logo.png';
 	import liga from '$lib/assets/LIGA_logo.png';
 	import rdStation from '$lib/assets/rd_station_logo.png';
-	// import amparo from '$lib/assets/amparo_logo.png';
+	import amparo from '$lib/assets/amparo_logo.png';
 
 	interface IExperience {
 		company: CompanyEntity;
@@ -18,19 +18,19 @@
 	}
 
 	const data: IExperience[] = [
-		// {
-		// 	company: new CompanyEntity(amparo, 'Amparo', 'https://www.amparo.com.vc/'),
-		// 	jobs: [
-		// 		new JobEntity(
-		// 			'Software Engineer',
-		// 			'I developed and maintained backend applications, working with microservices architectures using Go, hosted on AWS with integration of services like Lambda, SQS, and SES. My role involved collaborating with the team to enhance practices, architectures, and solutions, conducting tests, debugging code, and optimizing performance.',
-		// 			{
-		// 				start: new Date('2024-09-01 13:00:00'),
-		// 				end: null
-		// 			}
-		// 		)
-		// 	]
-		// },
+		{
+			company: new CompanyEntity(amparo, 'Amparo', 'https://www.amparo.com.vc/'),
+			jobs: [
+				new JobEntity(
+					'Software Engineer',
+					'I develop and maintain backend applications, working with microservices architectures using Go, hosted on AWS with integration of services like Lambda, SQS, and SES. My role involves collaborating with the team to enhance practices, architectures, and solutions, conducting tests, debugging code, and optimizing performance.',
+					{
+						start: new Date('2024-09-01 13:00:00'),
+						end: null
+					}
+				)
+			]
+		},
 		{
 			company: new CompanyEntity(rdStation, 'RD Station', 'https://www.rdstation.com/'),
 			jobs: [
@@ -102,7 +102,12 @@
 	const sections: HTMLElement[] = new Array(data.length);
 </script>
 
+<svelte:head>
+	<meta name="theme-color" content="#151922" />
+</svelte:head>
+
 <Header />
+
 <main class="flex w-full flex-col pt-20">
 	<div class="flex flex-col items-center gap-4">
 		<h2 class="text-2xl font-semibold uppercase text-night md:text-3xl">Experience</h2>
@@ -121,4 +126,5 @@
 		</section>
 	{/each}
 </main>
+
 <Footer />

@@ -84,7 +84,7 @@
 	}
 
 	.header-night {
-		background: url(grain.png);
+		background-image: url(grain.png);
 		@apply border-b-silver bg-night text-seasalt;
 	}
 </style>

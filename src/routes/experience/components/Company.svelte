@@ -24,15 +24,11 @@
 		/>
 	</figure>
 	<h3 class="text-md text-center font-semibold">
-		<a href={company.url} target="_blank">{company.name}</a>
+		<a class="underline" href={company.url} target="_blank">{company.name}</a>
 	</h3>
 </div>
 
 <style lang="scss">
-	a {
-		text-decoration: underline;
-	}
-
 	.light {
 		& > h3 {
 			@apply text-night;

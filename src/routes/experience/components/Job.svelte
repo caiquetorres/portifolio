@@ -28,7 +28,7 @@
 >
 	<strong class="text-md text-center font-semibold">{job.name}</strong>
 	<span class="text-sm text-cordovan">{startDate} - {endDate}</span>
-	<p class="mt-2 text-justify text-sm leading-8">{job.description}</p>
+	<p class="mt-2 text-justify text-sm leading-7 md:leading-8">{job.description}</p>
 </div>
 
 <style lang="scss">

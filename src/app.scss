@@ -16,7 +16,7 @@ html {
 }
 
 .section-night {
-	background: url(grain.png);
+	background-image: url(grain.png);
 	@apply flex w-full justify-center bg-night px-6 py-20;
 	clip-path: polygon(0% 0%, 100% 2rem, 100% calc(100% - 2rem), 0% 100%);
 }

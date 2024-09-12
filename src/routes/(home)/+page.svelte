@@ -6,14 +6,16 @@
 </script>
 
 <svelte:head>
-	<meta name="theme-color" content="#111111" />
+	<meta name="theme-color" content="#151922" />
 </svelte:head>
 
 <Header />
+
 <div class="flex w-full flex-col">
 	<main class="flex flex-col items-center overflow-y-auto overflow-x-hidden">
 		<Home />
 		<About />
 	</main>
 </div>
+
 <Footer />
