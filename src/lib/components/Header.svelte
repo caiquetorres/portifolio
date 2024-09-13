@@ -5,6 +5,7 @@
 		href: string;
 		name: string;
 	}
+
 	let shouldShow = $state(false);
 	let bodyOverflow = $derived(shouldShow ? 'hidden' : 'auto');
 	let isDark = $state(false);
@@ -24,15 +25,18 @@
 		media.addEventListener('change', listener);
 		return () => media.removeEventListener('change', listener);
 	});
+
 	$effect(() => {
 		document.body.style.overflow = bodyOverflow;
 	});
+
 	/**
 	 * Shows or closes the menu modal.
 	 */
 	function toggleShouldShow() {
 		shouldShow = !shouldShow;
 	}
+
 	/**
 	 * Says whether the header should have its background dark.
 	 */
@@ -84,7 +88,7 @@
 	}
 
 	.header-night {
-		background-image: url(grain.png);
+		background-image: url('$lib/images/grain.png');
 		@apply border-b-silver bg-night text-seasalt;
 	}
 </style>
