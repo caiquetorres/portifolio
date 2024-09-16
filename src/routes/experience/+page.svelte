@@ -23,7 +23,7 @@
 			jobs: [
 				new JobEntity(
 					'Software Engineer',
-					'I develop and maintain backend applications, working with microservices architectures using Go, hosted on AWS with integration of services like Lambda, SQS, and SES. My role involves collaborating with the team to enhance practices, architectures, and solutions, conducting tests, debugging code, and optimizing performance.',
+					'I develop and maintain backend applications, working with microservices architectures using Go, hosted on AWS with integration of services like Lambda and SQS. My role involves collaborating with the team to enhance practices, architectures, and solutions, conducting tests, debugging code, and optimizing performance.',
 					{
 						start: new Date('2024-09-01 13:00:00'),
 						end: null
