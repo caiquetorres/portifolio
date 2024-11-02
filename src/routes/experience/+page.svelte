@@ -11,6 +11,7 @@
 	import liga from '$lib/assets/LIGA_logo.png';
 	import rdStation from '$lib/assets/rd_station_logo.png';
 	import amparo from '$lib/assets/amparo_logo.png';
+	import google from '$lib/assets/google_logo.jpg';
 
 	interface IExperience {
 		company: CompanyEntity;
@@ -18,6 +19,10 @@
 	}
 
 	const data: IExperience[] = [
+		{
+			company: new CompanyEntity(google, 'Google', 'https://google.com'),
+			jobs: [new JobEntity('Coming soon', '', null)]
+		},
 		{
 			company: new CompanyEntity(amparo, 'Amparo', 'https://www.amparo.com.vc/'),
 			jobs: [
@@ -110,8 +115,8 @@
 
 <main class="flex w-full flex-col pt-20">
 	<div class="flex flex-col items-center gap-4">
-		<h2 class="text-2xl font-semibold uppercase text-night md:text-3xl">Experience</h2>
-		<div class="h-1 w-[5rem] rounded-full bg-cordovan"></div>
+		<h2 class="text-night text-2xl font-semibold uppercase md:text-3xl">Experience</h2>
+		<div class="bg-cordovan h-1 w-[5rem] rounded-full"></div>
 	</div>
 	{#each data as { company, jobs }, i}
 		{@const isOdd = !!(i % 2)}

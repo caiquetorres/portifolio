@@ -2,7 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { fade } from '$lib/animations/fade';
 	import Code from '$lib/components/Code.svelte';
-	import Memphis2 from '$lib/components/memphis/Memphis2.svelte';
+	// import Memphis2 from '$lib/components/memphis/Memphis2.svelte';
 
 	async function downloadResume(): Promise<void> {
 		const a = document.createElement('a');
@@ -18,11 +18,6 @@
 		use:fade
 		class="relative flex h-full w-full max-w-content flex-col items-center justify-center"
 	>
-		<div class="pointer-events-none absolute h-full w-full text-cordovan opacity-20">
-			<Memphis2
-				class="absolute bottom-[-3rem] left-[1rem] h-[15rem] w-[15rem] md:h-[20rem] md:w-[20rem]"
-			/>
-		</div>
 		<div class="flex flex-col items-center">
 			<h2 class="mb-4 text-2xl font-semibold uppercase text-seasalt md:text-3xl">About</h2>
 			<div class="h-1 w-[5rem] rounded-full bg-cordovan"></div>

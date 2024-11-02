@@ -9,11 +9,11 @@
 
 	const { theme = 'light', job }: IProps = $props();
 	let startDate = $derived(
-		`${job.range.start.toLocaleString('en-US', { month: 'short' })} ${job.range.start.getFullYear()}`
+		`${job.range?.start.toLocaleString('en-US', { month: 'short' })} ${job.range?.start.getFullYear()}`
 	);
 	let endDate = $derived.by(() => {
-		if (job.range.end) {
-			return `${job.range.end.toLocaleString('en-US', { month: 'short' })} ${job.range.end.getFullYear()}`;
+		if (job.range?.end) {
+			return `${job.range?.end.toLocaleString('en-US', { month: 'short' })} ${job.range?.end.getFullYear()}`;
 		} else {
 			return 'Present';
 		}
@@ -27,8 +27,12 @@
 	class="flex w-full max-w-blog flex-col items-center"
 >
 	<strong class="text-md text-center font-semibold">{job.name}</strong>
-	<span class="text-sm text-cordovan">{startDate} - {endDate}</span>
-	<p class="mt-2 text-justify text-sm leading-7 md:leading-8">{job.description}</p>
+	{#if job.range}
+		<span class="text-sm text-cordovan">{startDate} - {endDate}</span>
+	{/if}
+	{#if job.description}
+		<p class="mt-2 text-justify text-sm leading-7 md:leading-8">{job.description}</p>
+	{/if}
 </div>
 
 <style lang="scss">

@@ -11,7 +11,9 @@
 	let { ...props }: Props = $props();
 	let contentEl: HTMLElement;
 	let cls = $derived(props['class'] || '');
+
 	onMount(() => reset());
+
 	function reset() {
 		contentEl.textContent = props.defaultCode;
 	}

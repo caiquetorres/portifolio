@@ -5,6 +5,6 @@ export class JobEntity {
 		readonly range: {
 			readonly start: Date;
 			readonly end: Date | null;
-		}
+		} | null
 	) {}
 }

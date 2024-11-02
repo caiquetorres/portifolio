@@ -4,16 +4,20 @@
 	interface ILink {
 		href: string;
 		name: string;
+		key: string;
 	}
 
 	let shouldShow = $state(false);
 	let bodyOverflow = $derived(shouldShow ? 'hidden' : 'auto');
 	let isDark = $state(false);
+	let selected = $state('home');
+
 	const links: ILink[] = [
-		{ href: '/', name: 'Home' },
-		{ href: '/#about', name: 'About' },
-		{ href: 'experience', name: 'Experience' }
+		{ href: '/', name: 'Home', key: 'home' },
+		{ href: '/#about', name: 'About', key: 'about' },
+		{ href: 'experience', name: 'Experience', key: 'experience' }
 	];
+
 	onMount(() => {
 		isDark = window.scrollY > 0;
 		const media = window.matchMedia('(min-width: 640px)');
@@ -57,10 +61,17 @@
 			<strong class="select-none text-2xl font-semibold">CT</strong>
 		</a>
 		<nav class="hidden sm:block">
-			<ul class="flex h-full items-center space-x-4">
-				{#each links as { href, name }}
+			<ul class="flex h-full items-center space-x-6">
+				{#each links as { href, name, key }}
 					<li>
-						<a {href} class="hover:text-md text-xs uppercase duration-100 md:text-sm">{name}</a>
+						<a
+							{href}
+							class:underline={selected === key}
+							class="hover:text-md text-xs uppercase duration-100 md:text-sm"
+							onclick={() => (selected = key)}
+						>
+							{name}
+						</a>
 					</li>
 				{/each}
 			</ul>
