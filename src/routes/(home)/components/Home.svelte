@@ -19,7 +19,7 @@
 
 <section
 	id="home"
-	class="home flex h-[55rem] max-h-screen w-full items-center justify-center bg-seasalt"
+	class="home flex h-[40rem] max-h-screen w-full items-center justify-center bg-seasalt"
 >
 	<div use:fade class="relative flex h-full w-full max-w-content items-center justify-center">
 		<div class="pointer-events-none absolute h-full w-full text-charcoal opacity-20"></div>

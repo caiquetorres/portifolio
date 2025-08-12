@@ -12,6 +12,7 @@
 	import rdStation from '$lib/assets/rd_station_logo.png';
 	import amparo from '$lib/assets/amparo_logo.png';
 	import google from '$lib/assets/google_logo.jpg';
+	import dafiti from '$lib/assets/dafiti_logo.jpeg';
 
 	interface IExperience {
 		company: CompanyEntity;
@@ -20,8 +21,13 @@
 
 	const data: IExperience[] = [
 		{
-			company: new CompanyEntity(google, 'Google', 'https://google.com'),
-			jobs: [new JobEntity('Coming soon', '', null)]
+			company: new CompanyEntity(dafiti, 'Dafiti', 'https://www.dafiti.com.br'),
+			jobs: [
+				new JobEntity('Software Engineer II', '', {
+					start: new Date('2025-08-01 13:00:00'),
+					end: null
+				})
+			]
 		},
 		{
 			company: new CompanyEntity(amparo, 'Amparo', 'https://www.amparo.com.vc/'),
@@ -31,24 +37,24 @@
 					'I develop and maintain backend applications, working with microservices architectures using Go, hosted on AWS with integration of services like Lambda and SQS. My role involves collaborating with the team to enhance practices, architectures, and solutions, conducting tests, debugging code, and optimizing performance.',
 					{
 						start: new Date('2024-09-01 13:00:00'),
-						end: null
+						end: new Date('2025-04-30 13:00:00')
 					}
 				)
 			]
 		},
-		{
-			company: new CompanyEntity(rdStation, 'RD Station', 'https://www.rdstation.com/'),
-			jobs: [
-				new JobEntity(
-					'Software Engineer',
-					'I developed and maintained backend applications, working with microservices architectures using TypeScript (express) and Go. Additionally, I developed and maintained web platforms built with Vue. My role involved collaborating with the team to enhance practices, architectures, and solutions, conducting tests, debugging code, and optimizing performance. I managed code versioning using Git, with platforms such as GitLab and GitHub.',
-					{
-						start: new Date('2024-07-01 13:00:00'),
-						end: new Date('2024-09-01 13:00:00')
-					}
-				)
-			]
-		},
+		// {
+		// 	company: new CompanyEntity(rdStation, 'RD Station', 'https://www.rdstation.com/'),
+		// 	jobs: [
+		// 		new JobEntity(
+		// 			'Software Engineer',
+		// 			'I developed and maintained backend applications, working with microservices architectures using TypeScript (express) and Go. Additionally, I developed and maintained web platforms built with Vue. My role involved collaborating with the team to enhance practices, architectures, and solutions, conducting tests, debugging code, and optimizing performance. I managed code versioning using Git, with platforms such as GitLab and GitHub.',
+		// 			{
+		// 				start: new Date('2024-07-01 13:00:00'),
+		// 				end: new Date('2024-09-01 13:00:00')
+		// 			}
+		// 		)
+		// 	]
+		// },
 		{
 			company: new CompanyEntity(micro1, 'micro1', 'https://www.micro1.ai/'),
 			jobs: [
@@ -115,8 +121,8 @@
 
 <main class="flex w-full flex-col pt-20">
 	<div class="flex flex-col items-center gap-4">
-		<h2 class="text-night text-2xl font-semibold uppercase md:text-3xl">Experience</h2>
-		<div class="bg-cordovan h-1 w-[5rem] rounded-full"></div>
+		<h2 class="text-2xl font-semibold uppercase text-night md:text-3xl">Experience</h2>
+		<div class="h-1 w-[5rem] rounded-full bg-cordovan"></div>
 	</div>
 	{#each data as { company, jobs }, i}
 		{@const isOdd = !!(i % 2)}

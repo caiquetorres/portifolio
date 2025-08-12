@@ -19,11 +19,7 @@
 	];
 </script>
 
-<footer
-	class:bg-seasalt={!isDark}
-	class:bg-night={isDark}
-	class="flex flex-col items-center justify-center py-20 md:py-24"
->
+<footer class="flex flex-col items-center justify-center py-20 md:py-24">
 	<ul class:text-night={!isDark} class:text-silver={isDark} class="flex space-x-3">
 		<li>
 			<a href="https://github.com/caiquetorres" target="_blank">

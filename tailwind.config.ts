@@ -13,6 +13,9 @@ export default {
 				blog: '760px',
 				content: '1170px'
 			},
+			backgroundImage: {
+				grain: "url('src/lib/images/grain.png')"
+			},
 			colors: {
 				charcoal: '#2F4550',
 				seasalt: '#F9F9F9',

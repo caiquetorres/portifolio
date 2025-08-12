@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import Burger from './icons/Burger.svelte';
+	import X from './icons/X.svelte';
 
 	interface ILink {
 		href: string;
@@ -10,7 +12,6 @@
 	let shouldShow = $state(false);
 	let bodyOverflow = $derived(shouldShow ? 'hidden' : 'auto');
 	let isDark = $state(false);
-	let selected = $state('home');
 
 	const links: ILink[] = [
 		{ href: '/', name: 'Home', key: 'home' },
@@ -64,29 +65,28 @@
 			<ul class="flex h-full items-center space-x-6">
 				{#each links as { href, name, key }}
 					<li>
-						<a
-							{href}
-							class:underline={selected === key}
-							class="hover:text-md text-xs uppercase duration-100 md:text-sm"
-							onclick={() => (selected = key)}
-						>
+						<a {href} class="hover:text-md text-xs uppercase duration-100 md:text-sm">
 							{name}
 						</a>
 					</li>
 				{/each}
 			</ul>
 		</nav>
-		<button class="block sm:hidden" onclick={toggleShouldShow}>_ _ _</button>
+		<button class="block sm:hidden" onclick={toggleShouldShow}>
+			<Burger />
+		</button>
 	</div>
 </header>
 
 {#if shouldShow}
 	<div class="fixed z-20 block h-screen w-screen overflow-auto bg-night p-6 sm:hidden">
-		<button class="text-silver" onclick={toggleShouldShow}>Close</button>
+		<button class="text-silver" onclick={toggleShouldShow}>
+			<X />
+		</button>
 		<ul class="tems-center mt-4 flex flex-col gap-2">
 			{#each links as { href, name }}
 				<li class="flex justify-center text-silver">
-					<a {href} class="hover:text-md text-xs uppercase md:text-sm">{name}</a>
+					<a {href} class="hover:text-md text-md uppercase md:text-lg">{name}</a>
 				</li>
 			{/each}
 		</ul>
@@ -99,7 +99,7 @@
 	}
 
 	.header-night {
-		background-image: url('$lib/images/grain.png');
+		@apply bg-grain;
 		@apply border-b-silver bg-night text-seasalt;
 	}
 </style>
