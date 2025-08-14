@@ -14,7 +14,7 @@ export default {
 				content: '1170px'
 			},
 			backgroundImage: {
-				grain: "url('src/lib/images/grain.png')"
+				grain: "url('$lib/images/grain.png')"
 			},
 			colors: {
 				charcoal: '#2F4550',
