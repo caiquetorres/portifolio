@@ -15,7 +15,9 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4",
     "highlight.js": "^11.9.0",
+    "marked": "^16.1.2",
     "typed.js": "^2.1.0"
   },
   "devDependencies": {

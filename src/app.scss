@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+	box-sizing: border-box;
+}
+
 body,
 html {
 	@apply bg-seasalt;
@@ -19,4 +23,13 @@ html {
 	@apply bg-grain;
 	@apply flex w-full justify-center bg-night px-6 py-20;
 	clip-path: polygon(0% 0%, 100% 2rem, 100% calc(100% - 2rem), 0% 100%);
+}
+
+::-webkit-scrollbar {
+	width: 0; /* Remove scrollbar space */
+	background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+	background: #ff0000;
 }
